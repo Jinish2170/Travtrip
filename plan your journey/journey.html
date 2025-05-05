@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Transportation System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="journey1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" 
+        integrity="sha512-4PlVXdOZ4Ge9p6rb7b7UNVZyCe9pY6DE7yn8urH6gh58WpnVh2u0Zkpf0idOJhUfNHNt1B5bN/hFSVQH77y0bw=="  crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">Public Transportation System</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index1/index.html">Home</a></li>
+                <li><a href="../plan your journey/journey.html">Plan Your Journey</a></li>
+                <li><a href="#">Trip Tracker</a></li>
+                <li><a href="../help/help.html">Help</a></li>
+                <li><a href="../contactUs/ContactUs.html">Contact Us</a></li>
+                <li><a href="#"><i class="fas fa-search"></i></a></li>
+                <li><a href="../signin/signin1.html">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Find Your Perfect Destination</h2>
+        <div class="search-container">
+            <form class="search-box" autocomplete="off">
+                <div class="start-input-field">
+                    <i class="fas fa-location-arrow"></i>
+                    <input type="text" id="startSearch" placeholder="From" oninput="showSuggestionsStart(this.value)">
+                    <div id="start-suggestions" class="suggestions-box-start"></div>
+                </div>
+                <div class="swap-icon" title="Swap">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div class="end-input-field">
+                    <i class="fas fa-location-arrow"></i>
+                    <input type="text" id="endSearch" placeholder="To" oninput="showSuggestionsEnd(this.value)">
+                    <div id="end-suggestions" class="suggestions-box-end"></div>
+                </div>
+                <div class="date-input">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="date">
+                </div>
+                <button class="search-button" type="submit">Search</button>
+            </form>
+        </div>
+    </section>    
+
+    <!-- Live Updates Section -->
+    <section class="live-updates">
+        <h2>Live Bus Updates</h2>
+        <p>Track real-time bus arrivals, delays, and route changes.</p>
+        <div class="update-container">
+            <marquee behavior="scroll" direction="left">🚍 Bus with Route No :- 14 delayed by 10 mins | 🚍 Bus with Route No :- 16 arriving in 5 mins | 🚏 Route No :- 12 has a detour due to construction</marquee>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <button onclick="window.location.href='../plan your journey/journey.html';">Manage My Booking</button>
+        <button onclick="window.location.href='#';">Track Your Trip</button>
+        <button onclick="window.location.href='../help/help.html';">Help</button>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers">
+        <!-- Header with Title and "View All" Link -->
+        <div class="offers-header" style="text-align: center;">
+            <h2>Bus Booking Discount Offers</h2>
+        </div>
+    
+        <!-- Horizontally Scrollable Container -->
+        <div class="offers-container">
+
+        <!-- Offer 2: Credit Card Savings -->
+        <div class="offer-item">
+             <!-- Credit Card SVG -->
+        <div class="offer-img" style="width:70px;height:70px;display:flex;align-items:center;justify-content:center;background:#e0e7ff;border-radius:8px;">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <rect x="6" y="14" width="36" height="20" rx="4" fill="#e0e7ff" stroke="#4338ca" stroke-width="2"/>
+                <rect x="10" y="26" width="8" height="4" rx="1" fill="#4338ca"/>
+                <rect x="22" y="26" width="8" height="4" rx="1" fill="#a5b4fc"/>
+            </svg>
+        </div>
+        <div class="offer-text">
+            <p class="offer-title"><i class="fa-solid fa-credit-card"></i> Flat up to 45% off</p>
+            <p class="offer-subtitle">Instant discount on bus fares with your credit card!</p>
+            <p class="offer-code">Use Code: CREDIT45</p>
+            <p class="offer-disclaimer">Offer valid on select bank cards. T&Cs apply.</p>
+        </div>
+        </div>
+        
+        <!-- Offer 3: Full Day Commute Discount -->
+        <div class="offer-item">
+           <!-- Bus SVG -->
+        <div class="offer-img" style="width:70px;height:70px;display:flex;align-items:center;justify-content:center;background:#e6f9f0;border-radius:8px;">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <rect x="8" y="16" width="32" height="16" rx="4" fill="#e6f9f0" stroke="#16a054" stroke-width="2"/>
+                <rect x="12" y="20" width="24" height="8" rx="2" fill="#16a054"/>
+                <circle cx="16" cy="34" r="3" fill="#16a054"/>
+                <circle cx="32" cy="34" r="3" fill="#16a054"/>
+            </svg>
+        </div>
+        <div class="offer-text">
+            <p class="offer-title"><i class="fa-solid fa-bus"></i> Up to 85% off on a Full Day Pass</p>
+            <p class="offer-subtitle">Enjoy unlimited rides throughout the day!</p>
+            <p class="offer-code">Use Code: FDBOOK85</p>
+            <p class="offer-disclaimer">Applicable on single-day passes. T&Cs apply.</p>
+        </div>
+        </div>
+        
+        <!-- Offer 4: Year Travel Pass -->
+        <div class="offer-item">
+            <div class="offer-img" style="width:70px;height:70px;display:flex;align-items:center;justify-content:center;background:#f0fdf4;border-radius:8px;">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <rect x="10" y="14" width="28" height="20" rx="4" fill="#f0fdf4" stroke="#16a054" stroke-width="2"/>
+                    <rect x="16" y="22" width="16" height="8" rx="2" fill="#16a054"/>
+                    <circle cx="24" cy="34" r="3" fill="#16a054"/>
+                </svg>
+            </div>
+            <div class="offer-text">
+                <p class="offer-title"><i class="fa-solid fa-bus"></i> Save Up to 90% on Your Commute!</p>
+                <p class="offer-subtitle">Get our exclusive Year Travel Pass for unlimited rides!</p>
+                <p class="offer-code">Use Code: YEARPASS365</p>
+                <p class="offer-disclaimer">Ideal for frequent travelers. T&Cs apply.</p>
+            </div>
+        </div>  
+    </section>  
+  
+    <!-- User Testimonials -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"This service is amazing! The buses are always on time and super comfortable." - Sarah L.</p>
+        </div>
+        <div class="testimonial">
+            <p>"Affordable and eco-friendly. A great way to travel!" - David M.</p>
+       </div>
+        <div class="testimonial">
+            <p>"Booking tickets online is a breeze. Love the convenience!" - Emma R.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-item">
+            <i class="fas fa-shield-alt fa-3x"></i>
+            <h3>Health and Safety</h3>
+            <p>Keep yourself safe while traveling with our trusted services.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-couch fa-3x"></i>
+            <h3>Comfort on Board</h3>
+            <p>Spacious seating, onboard Wi-Fi, and power outlets for a pleasant journey.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-users fa-3x"></i>
+            <h3>Satisfied Customers</h3>
+            <p>Over 100+ happy customers countrywide. Join the community!</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-leaf fa-3x"></i>
+            <h3>The Green Choice</h3>
+            <p>Eco-friendly and sustainable travel options for a better tomorrow.</p>
+        </div>
+    </section>
+
+    <!-- Informational Section -->
+    <section class="info">
+        <div class="info-item">
+            <h3>🎟️ Get Cheap Bus Tickets</h3>
+            <p>Looking for affordable and convenient travel? Look no further. We offer a wide selection of cheap bus tickets for both daily commutes and exciting weekend getaways.</p>
+        </div>
+        <div class="info-item">
+            <h3>🗺️ Bus Routes and Timetables</h3>
+            <p>Plan your journey with ease using our interactive route maps and comprehensive schedules. Whether you're commuting daily or exploring new destinations, our tools provide up-to-date information.</p>
+        </div>
+        <div class="info-item">
+            <h3>💳 Buying Your Tickets is Easy</h3>
+            <p>Securing your bus tickets is a breeze with our fast and secure online booking process. Your payment information is always protected with our secure encryption technology.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Online Bus Booking FAQ's</h2>
+    
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+        <div class="faq-question">
+            <span>Q. Where can I find bus schedules?</span>
+            <i class="fa-solid fa-plus icon-toggle"></i>
+        </div>
+        <div class="faq-answer">
+            <p>
+            We regularly update our bus schedules on the website. 
+            Simply enter your departure and destination stations to view the latest options.
+            </p>
+        </div>
+        </div>
+    
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+        <div class="faq-question">
+            <span>Q. How do I contact customer support?</span>
+            <i class="fa-solid fa-plus icon-toggle"></i>
+        </div>
+        <div class="faq-answer">
+            <p>
+            We’re available 24/7 via email or tollfree No. on our website. Our team is always there to help you
+            with any questions or issues you may have.
+            </p>
+        </div>
+        </div>
+    
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+        <div class="faq-question">
+            <span>Q. How do I book a ticket?</span>
+            <i class="fa-solid fa-plus icon-toggle"></i>
+        </div>
+        <div class="faq-answer">
+            <p>
+            Choose your departure, destination, and travel date on our website. Follow the prompts 
+            to confirm your seat and payment details.
+            </p>
+        </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Q. Do I need to print my ticket?</span>
+                <i class="fa-solid fa-plus icon-toggle"></i>
+            </div>
+            <div class="faq-answer">
+                <p>
+                    Most operators accept e-tickets on your smartphone. However, 
+                    some may require a printed copy, so always confirm with your operator beforehand.
+                </p>
+            </div>
+            </div>
+    
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+        <div class="faq-question">
+            <span>Q. What payment methods are accepted?</span>
+            <i class="fa-solid fa-plus icon-toggle"></i>
+        </div>
+        <div class="faq-answer">
+            <p>
+                We accept major credit/debit cards, PayPal, and popular digital wallets. 
+                All transactions are secured with advanced encryption for your peace of mind.
+            </p>
+        </div>
+        </div>
+    
+        <!-- "View All" link at the bottom (optional) -->
+        <div class="faq-view-all">
+        <a href="#">View All FAQs</a>
+        </div>
+    </section>
+  
+    <!-- Minimal JavaScript for according toggling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const faqItems = document.querySelectorAll('.faq-item');
+    
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.icon-toggle');
+    
+            // Initially hide answers
+            answer.style.display = 'none';
+    
+            question.addEventListener('click', () => {
+            // Toggle answer visibility
+            const isVisible = answer.style.display === 'block';
+            answer.style.display = isVisible ? 'none' : 'block';
+    
+            // Toggle icon from plus to minus
+            icon.classList.toggle('fa-plus', isVisible);
+            icon.classList.toggle('fa-minus', !isVisible);
+            });
+        });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="https://www.suratsitilink.org/PlanYourTrip.aspx">Home</a></li>
+                    <li><a href="https://www.suratsitilink.org/LiveBusInfo.aspx">Live Bus Info</a></li>
+                    <li><a href="https://www.suratsitilink.org/TimeTable.aspx">Time table</a></li>
+                    <li><a href="https://www.suratsitilink.org/Copyright Statement.aspx">Copyright Statement</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="https://www.suratsitilink.org/AboutUs.aspx">About Us</a></li>
+                    <li><a href="https://www.suratsitilink.org/Disclaimer.aspx">Disclaimer</a></li>
+                    <li><a href="https://www.suratsitilink.org/PrivacyPolicy.aspx">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Info</h3>
+                <ul>
+                    <li><a href="https://www.suratsitilink.org/GetFare.aspx">Fare</a></li>
+                    <li><a href="https://www.suratsitilink.org/News.aspx">News</a></li>
+                    <li><a href="https://www.suratsitilink.org/gallery.aspx">gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="https://www.suratsitilink.org/Feedback.aspx">Feedback</a></li>
+                    <li><a href="https://www.suratsitilink.org/complaint.aspx">Complaint</a></li>
+                    <li><a href="https://www.suratsitilink.org/Contacts.aspx">Contact Us</a></li>
+                    <li><a href="https://www.suratsitilink.org/Filedownload.aspx">Downloads</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-youtube">
+                <a href="https://www.youtube.com"  target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        
+            <div class="footer-linkedin">
+                <a href="https://in.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>  
+            </div>
+        
+            <div class="footer-instagram">
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+          <p>&copy; 2025 Public Transportation System | All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="journey.js"></script>
+</body>
+</html>

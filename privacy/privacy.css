@@ -1,0 +1,172 @@
+/* ======================================================
+   Variables & Global Styles
+   ===================================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+   :root {
+     --color-bg: #f9f9f9;
+     --color-card: #ffffff;
+     --color-text: #333333;
+     --color-heading: #2c3e50;
+     --color-link: #1893da;
+     --color-link-hover: #16a054;
+     --font-heading: 'Merriweather', serif;
+     --font-body: 'Open Sans', sans-serif;
+     --max-width: 800px;
+     --spacing: 1.5rem;
+   }
+   
+   *, *::before, *::after {
+     box-sizing: border-box;
+   }
+   
+   body {
+     margin: 0;
+     padding: 0;
+     background-color: var(--color-bg);
+     color: var(--color-text);
+     font-family: var(--font-body);
+     line-height: 1.8;
+   }
+   
+   a {
+     color: var(--color-link);
+     text-decoration: none;
+     transition: color 0.2s;
+   }
+   
+   a:hover {
+     color: var(--color-link-hover);
+   }
+   
+   .container {
+     max-width: var(--max-width);
+     margin: var(--spacing) auto;
+     padding: 0 var(--spacing);
+   }
+   
+   /* ======================================================
+      Header & Navigation
+      ===================================================== */
+   header {
+     background-color: var(--color-card);
+     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+   }
+   
+   header .container {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: var(--spacing) 0;
+   }
+   
+   header h1 {
+     margin: 0;
+     font-family: var(--font-heading);
+     font-size: 1.5rem;
+     color: var(--color-heading);
+   }
+   
+   nav ul {
+     display: flex;
+     gap: calc(var(--spacing) / 2);
+     margin: 0;
+     padding: 0;
+     list-style: none;
+   }
+   
+   nav li a {
+     font-weight: 600;
+     padding: 0.5rem;
+     border-radius: 4px;
+     transition: background-color 0.2s;
+   }
+   
+   nav li a:hover {
+     background-color: rgba(24, 147, 218, 0.1);
+   }
+   
+   /* ======================================================
+      Privacy Policy Card
+      ===================================================== */
+   .privacy-policy {
+     background-color: var(--color-card);
+     border-radius: 8px;
+     padding: var(--spacing);
+     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+   }
+   
+   .privacy-policy h2 {
+     font-family: var(--font-heading);
+     font-size: 2rem;
+     font-weight: 700;
+     color: var(--color-heading);
+     margin: 0 0 var(--spacing);
+     text-align: center;
+   }
+   
+   .privacy-policy p {
+     margin: 0 0 var(--spacing);
+   }
+   
+   .privacy-policy ol,
+   .privacy-policy ul {
+     margin: 0 0 var(--spacing) 1.5rem;
+     padding: 0;
+   }
+   
+   .privacy-policy li {
+     margin-bottom: 0.75rem;
+   }
+   
+   .privacy-policy h3 {
+     font-family: var(--font-heading);
+     font-size: 1.5rem;
+     color: var(--color-heading);
+     margin: var(--spacing) 0 0.5rem;
+     border-bottom: 2px solid rgba(44,62,80,0.1);
+     padding-bottom: 0.25rem;
+   }
+   
+   .privacy-policy h4 {
+     font-family: var(--font-heading);
+     font-size: 1.125rem;
+     color: var(--color-heading);
+     margin: var(--spacing) 0 0.25rem;
+   }
+   
+   .privacy-policy address {
+     font-style: normal;
+     background-color: #f1f1f1;
+     border-left: 4px solid var(--color-link);
+     padding: 1rem;
+     border-radius: 4px;
+     margin: var(--spacing) 0;
+   }
+   
+   /* ======================================================
+      Footer
+      ===================================================== */
+   footer {
+     text-align: center;
+     padding: var(--spacing) 0;
+     font-size: 0.875rem;
+     color: #777777;
+   }
+   
+   /* ======================================================
+      Responsive
+      ===================================================== */
+   @media (max-width: 600px) {
+     .privacy-policy h2 {
+       font-size: 1.75rem;
+     }
+     .privacy-policy h3 {
+       font-size: 1.25rem;
+     }
+     nav ul {
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 0.75rem;
+     }
+   }
